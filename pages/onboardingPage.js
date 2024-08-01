@@ -8,7 +8,7 @@ import Button from '../components/OnboardingButton';
 
 const { width } = Dimensions.get('window');
 
-export default function OnboardingPage() {
+export default function OnboardingPage({ navigation }) {
     const scrollX = useRef(new Animated.Value(0)).current;
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -17,6 +17,12 @@ export default function OnboardingPage() {
             flex: 1,
             padding: 30,
         },
+        // container: {
+        //     flex: 1,
+        //     backgroundColor: '#fff',
+        //     alignItems: 'center',
+        //     justifyContent: 'center',
+        // },
         buttonContainer: {
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -46,7 +52,7 @@ export default function OnboardingPage() {
 
     return (
         <View style={styles.container}>
-            <AppLogo/>
+            <AppLogo />
             <Animated.FlatList
                 ref={flatListRef}
                 data={onboardingItems}
@@ -66,9 +72,9 @@ export default function OnboardingPage() {
             <View style={styles.buttonContainer}>
                 {currentIndex === onboardingItems.length - 1 ? (
                     <>
-                        <Button text="Register" onPress={() => { /* Handle Register action */ }} />
-                        <Button style={styles.loginButton} text="Login" onPress={() => { /* Handle Login action */ }} />
-                        
+                        <Button text="Daftar" onPress={() => navigation.navigate('Register')} />
+                        <Button style={styles.loginButton} text="Masuk" onPress={() => navigation.navigate('Login')} />
+
                         {/* <TouchableOpacity style={[styles.button, {backgroundColor: '#EDEBFB'}]}>
                             <Text style={[styles.buttonText, {color: '#4E36DC'}]}>Register</Text>
                         </TouchableOpacity>
@@ -77,7 +83,7 @@ export default function OnboardingPage() {
                         </TouchableOpacity> */}
                     </>
                 ) : (
-                    <Button text="Next" onPress={handleNext} />
+                    <Button text="Selanjutnya" onPress={handleNext} />
                     // <TouchableOpacity style={styles.button} onPress={handleNext}>
                     //     <Text style={styles.buttonText}>Next</Text>
                     // </TouchableOpacity>
