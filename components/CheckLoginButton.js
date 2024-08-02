@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
-export default function CheckLoginButton() {
+export default function CheckLoginButton( {navigation} ) {
     const styles = StyleSheet.create({
         container: {
             flex: 0.1,
@@ -17,7 +17,7 @@ export default function CheckLoginButton() {
         }
     })
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Register')}>
             <Text style={styles.checkLoginText}>Belum ada akun? Daftar sekarang!</Text>
         </TouchableOpacity>
     )

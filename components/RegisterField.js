@@ -52,7 +52,7 @@ export default function RegisterField({ navigation }) {
         },
         input: {
             height: 30,
-            marginBottom: 15,
+            marginBottom: 10,
             // backgroundColor: 'yellow',
             borderBottomColor: '#4E36DC',
             borderBottomWidth: StyleSheet.hairlineWidth,

@@ -15,7 +15,8 @@ export default function GenderPicker() {
             // backgroundColor: 'brown',
             borderBottomColor: '#4E36DC',
             borderBottomWidth: StyleSheet.hairlineWidth,
-            height: 60
+            // height: 80,
+            justifyContent: 'center',
         },
         input: {
             height: 30,
@@ -25,7 +26,7 @@ export default function GenderPicker() {
             justifyContent: 'center'
         },
         genderPickerTitle: {
-            marginBottom: 10
+            marginBottom: 15
         }
     })
 
@@ -33,6 +34,7 @@ export default function GenderPicker() {
         <View style={styles.container}>
             <Text style={styles.genderPickerTitle}>Jenis Kelamin</Text>
             <RNPickerSelect
+                style={styles.genderPicker}
                 onValueChange={(value) => setGender(value)}
                 items={[
                     { label: 'Pria', value: 'pria' },

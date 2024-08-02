@@ -18,7 +18,7 @@ export default function LoginPage({ navigation }) {
             <AppLogo />
             <LoginField navigation={ navigation }/>
             <LoginButton />
-            <CheckLoginButton />
+            <CheckLoginButton navigation={ navigation }/>
         </View>
 
     )
